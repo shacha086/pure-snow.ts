@@ -1,13 +1,16 @@
 {
   "name": "pure-snow.ts",
-  "version": "2.1.0",
+  "version": "2.1.2",
   "description": "Snow falling slowly on a winter night. Probably the most calming and peaceful snowfall effect written in pure JS/CSS.",
-  "main": "pure-snow.js",
+  "main": "dist/pure-snow.iife.js",
+  "module": "dist/pure-snow.esm.js",
+  "types": "dist/pure-snow.d.ts",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "publish": "npm run build && npm publish --access public"
   },
   "repository": {
     "type": "git",
@@ -36,6 +39,7 @@
   "devDependencies": {
     "@types/node": "^25.0.0",
     "typescript": "~5.9.3",
-    "vite": "^7.2.4"
+    "vite": "^7.2.4",
+    "vite-plugin-dts": "^4.5.4"
   }
 }

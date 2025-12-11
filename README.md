@@ -16,14 +16,14 @@ You can use several ways to include and use the package in your project:
 You can include the package via a CDN link in your HTML file. The snow effect will be automatically initialized when the document is loaded.
 ```html
 <!--     You can use either the IIFE or the ES module version with auto initialize -->
-<script src="dist/pure-snow.iife.js" data-init="true" ></script>
-<script type="module" src="dist/pure-snow.es.js?init=true"></script>
+<script src="https://cdn.jsdelivr.net/npm/pure-snow.ts/dist/pure-snow.iife.min.js" data-init="true" ></script>
+<script type="module" src="https://cdn.jsdelivr.net/npm/pure-snow.ts/+esm?init=true"></script>
 ```
 
 #### Manual initialization
 ```html
 <!--     use the IIFE version and manually initialize -->
-<script src="dist/pure-snow.iife.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/pure-snow.ts/dist/pure-snow.iife.min.js"></script>
 <script>
     document.addEventListener('DOMContentLoaded', () => {
     initPureSnow();
@@ -32,7 +32,7 @@ You can include the package via a CDN link in your HTML file. The snow effect wi
 
 <!--     Or else use the ES module version and manually initialize -->
 <script type="module">
-    import { init } from '/src/pure-snow.ts';
+    import { init } from 'https://cdn.jsdelivr.net/npm/pure-snow.ts@2.1.2/+esm';
     document.addEventListener('DOMContentLoaded', () => {
         init();
     });
@@ -45,9 +45,9 @@ npm install pure-snow.ts
 ```
 Then, you can import and use the package as follows:
 ```ts
-import { initPureSnow } from 'pure-snow.ts';
+import { init } from 'pure-snow.ts';
 document.addEventListener('DOMContentLoaded', () => {
-    initPureSnow();
+    init();
 });
 ```
 
@@ -55,10 +55,10 @@ document.addEventListener('DOMContentLoaded', () => {
 ### Specifying a container element
 Instead of global document, you can specify a container element to which the snow effect will be applied.
 ```ts
-import { initPureSnow } from 'pure-snow.ts';
+import { init } from 'pure-snow.ts';
 const container = document.getElementById('my-container');
 document.addEventListener('DOMContentLoaded', () => {
-    initPureSnow({
+    init({
         root: container
     });
 });
@@ -66,9 +66,9 @@ document.addEventListener('DOMContentLoaded', () => {
 ### Adjusting snowflake count
 You can adjust the number of snowflakes by specifying the `count` option.
 ```ts
-import { initPureSnow } from 'pure-snow.ts';
+import { init } from 'pure-snow.ts';
 document.addEventListener('DOMContentLoaded', () => {
-    initPureSnow({
+    init({
         count: 300
     });
 });
