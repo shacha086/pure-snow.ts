@@ -107,15 +107,15 @@ class PureSnow {
             rules[i] = `
 .${snowflakeName}:nth-child(${i}) {
     opacity: ${opacity};
-    transform: translate(${randomX}dvw, -10px) scale(${randomScale});
+    transform: translate(${randomX}svw, -10px) scale(${randomScale});
     animation: fall-${i} ${fallDuration}s ${fallDelay}s linear infinite;
 }
 @keyframes fall-${i} {
     ${randomYoyoTime * 100}% {
-        transform: translate(${randomXEnd}dvw, ${randomYoyoY}dvh) scale(${randomScale});
+        transform: translate(${randomXEnd}svw, ${randomYoyoY}svh) scale(${randomScale});
     }
     to {
-        transform: translate(${randomXEndYoyo}dvw, ${pageHeightVh}dvh) scale(${randomScale});
+        transform: translate(${randomXEndYoyo}svw, ${pageHeightVh}svh) scale(${randomScale});
     }
 }`
         }

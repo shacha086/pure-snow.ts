@@ -1,6 +1,6 @@
 {
   "name": "pure-snow.ts",
-  "version": "2.1.3",
+  "version": "2.1.4",
   "description": "Snow falling slowly on a winter night. Probably the most calming and peaceful snowfall effect written in pure JS/CSS.",
   "main": "dist/pure-snow.iife.js",
   "module": "dist/pure-snow.esm.js",
