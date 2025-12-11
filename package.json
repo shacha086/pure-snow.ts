@@ -1,14 +1,17 @@
 {
-  "name": "pure-snow.js",
+  "name": "pure-snow.ts",
   "version": "2.1.0",
   "description": "Snow falling slowly on a winter night. Probably the most calming and peaceful snowfall effect written in pure JS/CSS.",
   "main": "pure-snow.js",
   "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hyperstown/pure-snow.js.git"
+    "url": "git+https://github.com/shacha086/pure-snow.ts.git"
   },
   "keywords": [
     "snow",
@@ -16,14 +19,23 @@
     "puresnowjs",
     "pure-snow.js",
     "puresnow.js",
+    "snowts",
+    "puresnowts",
+    "pure-snow.ts",
+    "puresnow.ts",
     "snowflake",
     "winter",
     "css"
   ],
-  "author": "hyperstown",
+  "author": "shacha05",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/hyperstown/pure-snow.js/issues"
+    "url": "https://github.com/shacha05/pure-snow.ts/issues"
   },
-  "homepage": "https://github.com/hyperstown/pure-snow.js#readme"
+  "homepage": "https://github.com/shacha05/pure-snow.ts#readme",
+  "devDependencies": {
+    "@types/node": "^25.0.0",
+    "typescript": "~5.9.3",
+    "vite": "^7.2.4"
+  }
 }

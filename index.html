@@ -5,18 +5,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>pureSnow.js</title>
     <link rel="stylesheet" href="./style.css">
-    <script src="./pure-snow.js" defer></script>
+<!--     You can use either the IIFE or the ES module version with auto initialize-->
+<!--    <script src="dist/pure-snow.iife.js" data-init="true" ></script>-->
+<!--    <script type="module" src="dist/pure-snow.es.js?init=true"></script>-->
+
+<!--     Or you can use the IIFE version and manually initialize -->
+<!--    <script src="dist/pure-snow.iife.js"></script>-->
+<!--    <script>-->
+<!--      document.addEventListener('DOMContentLoaded', () => {-->
+<!--        initPureSnow();-->
+<!--      });-->
+<!--    </script>-->
+
+<!--    Or else use the ES module version and manually initialize-->
+    <script type="module">
+      import { init } from '/src/pure-snow.ts';
+      document.addEventListener('DOMContentLoaded', () => {
+        init();
+        const wrapper = document.querySelector('.snow-wrapper');
+        function toggleSnow() {
+          wrapper.classList.toggle('hidden');
+        }
+        window.toggleSnow = toggleSnow;
+      });
+    </script>
   </head>
   <body>
-    <div id="snow" data-count="200"></div>
-    <input 
-      id="toggle-snow"
-      type="checkbox" 
-      checked="true" 
-      onclick="showSnow(this.checked == true)"
-    >
-      ToggleSnow
-    </input>
-    <h1 style="text-align:center;">Hello winter</h1>
+  <div class="snow-wrapper" data-count="200"></div>
+  <input id="toggle-snow" type="checkbox" checked="checked"
+         onclick="toggleSnow()"/>
+  <label for="toggle-snow">ToggleSnow</label>
+  <h1 style="text-align:center;">Hello winter</h1>
   </body>
+  <style>
+    body {
+      background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+      overflow-x: hidden;
+      min-height: 100vh;
+      /* If you want to change the site height you can remove overflow-y */
+      /* pureSnow will automatically detect height of body tag */
+      overflow-y: hidden;
+      color: white;
+    }
+    .snow-wrapper.hidden .snowflake {
+      display: none;
+    }
+  </style>
 </html>
