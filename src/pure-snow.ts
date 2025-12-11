@@ -7,6 +7,8 @@ export type PureSnowConfig = {
     snowflakeClass: string,
     heightPx?: number,
     heightVh?: number,
+    widthPx?: number,
+    widthVw?: number,
     baseCSS: string,
 }
 
@@ -83,8 +85,16 @@ class PureSnow {
                 pageHeightVh = this.config.root.scrollHeight / window.innerHeight * 100;
             }
         }
+        let pageWidthVw = this.config.widthVw;
+        if (!pageWidthVw) {
+            if (this.config.widthPx) {
+                pageWidthVw = this.config.widthPx / window.innerWidth * 100;
+            } else {
+                pageWidthVw = this.config.root.scrollWidth / window.innerWidth * 100;
+            }
+        }
         for (let i = 1; i <= this.config.snowflakesCount; i++) {
-            const randomX = Math.random() * 100; // vw
+            const randomX = this.getRandomArbitrary(0, pageWidthVw); // vw
             const randomOffset = Math.random() * 10 // vw;
             const randomXEnd = randomX + randomOffset;
             const randomXEndYoyo = randomX + (randomOffset / 2);
